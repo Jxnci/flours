@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements("id");
+        Schema::create('suplies', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            $table->string('lastname');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->integer('stock');
+            $table->float('price');
+            $table->unsignedBigInteger('unit_id');
             $table->timestamps();
+
+            $table->foreign('unit_id')->references("id")->on("units")->onDelete("cascade");
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('suplies');
     }
 };
