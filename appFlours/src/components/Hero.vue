@@ -1,23 +1,47 @@
 <template>
   <section class="text-gray-600 body-font bg-violet-100">
     <div
-      class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+      class="container mx-auto flex px-12 md:flex-row flex-col items-center"
     >
       <div
         class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
       >
+        <span class="font-semibold uppercase">Registrate hoy!</span>
         <h1
-          class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+          class="text-[1.8rem] sm:text-4xl xl:text-5xl font-bold leading-tight capitalize sm:pr-8 xl:pr-10"
         >
-          Knausgaard typewriter readymade marfa
+          Descubre la solución perfecta para
+          <span
+            class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 from-10% via-purple-500 via-30% to-blue-500"
+            >administrar tu negocio</span
+          >
         </h1>
-        <p class="mb-8 leading-relaxed">
-          Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag
-          typewriter affogato, hella selvage wolf narwhal dreamcatcher.
+        <p class="mb-8 leading-relaxed mt-4">
+          Nuestro sistema web te ofrece una plataforma intuitiva y fácil de
+          usar, diseñada especialmente para emprendedores como tú.
         </p>
-        <div class="flex lg:flex-row md:flex-col">
+        <div class="flex lg:flex-row max-md:flex-col gap-4">
           <button
-            class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none"
+            class="bg-sky-500 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-blue-400 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              width="512"
+              height="512"
+              class="w-6 h-6 text-white"
+            >
+              <path
+                d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm8.647,7H17.426a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7ZM16.5,12a10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3h8.048A10.211,10.211,0,0,1,16.5,12ZM8.778,17h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm0-10A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2.461,9H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461a9.992,9.992,0,0,1,0-6Zm.892,8H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm11.252,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM21.539,15H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437a9.992,9.992,0,0,1,0,6Z"
+              />
+            </svg>
+            <span class="ml-4 flex items-start flex-col leading-none">
+              <span class="text-xs text-white mb-1">Descubrelo en</span>
+              <span class="title-font text-white font-medium">Web App</span>
+            </span>
+          </button>
+          <button
+            class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +54,7 @@
               ></path>
             </svg>
             <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
+              <span class="text-xs text-gray-600 mb-1">Proximamente en</span>
               <span class="title-font font-medium">Google Play</span>
             </span>
           </button>
@@ -51,7 +75,7 @@
               ></path>
             </svg>
             <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Download on the</span>
+              <span class="text-xs text-gray-600 mb-1">Proximamente en</span>
               <span class="title-font font-medium">App Store</span>
             </span>
           </button>
@@ -59,11 +83,18 @@
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
         <img
-          class="object-cover object-center rounded"
+          class="object-cover object-center rounded max-sm:hidden"
           alt="hero"
-          src="https://dummyimage.com/720x600"
+          src="../../fiber-pricing.webp"
         />
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+  img{
+    z-index: 5;
+  }
+
+</style>

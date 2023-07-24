@@ -1,10 +1,10 @@
 <template>
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
+  <section class="text-gray-600 body-font" id="testimonios">
+    <div class="container px-5 pt-16 pb-24 mx-auto">
       <h1
         class="text-3xl font-medium title-font text-gray-900 mb-12 text-center"
       >
-        Testimonials
+        Testimonios
       </h1>
       <div class="flex flex-wrap -m-4">
         <div class="p-4 md:w-1/2 w-full">
@@ -20,10 +20,13 @@
               ></path>
             </svg>
             <p class="leading-relaxed mb-6">
-              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
-              neutra before they sold out fixie 90's microdosing. Tacos
-              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
-              authentic iceland.
+              Desde que empecé a usar CookApp para gestionar mi emprendimineto,
+              he notado una gran mejora en la forma en que manejo mi negocio.
+              Con la aplicación, puedo gestionar fácilmente los pedidos de mis
+              clientes y mantener un registro de los ingredientes que utilizo al
+              preparar mis productos . Además, puedo ver informes detallados
+              sobre mis ventas diarias y semanales, lo que me ayuda a tomar
+              decisiones informadas sobre mi inventario y mis compras.
             </p>
             <a class="inline-flex items-center">
               <img
@@ -33,9 +36,9 @@
               />
               <span class="flex-grow flex flex-col pl-4">
                 <span class="title-font font-medium text-gray-900"
-                  >Holden Caulfield</span
+                  >Carlos Montes</span
                 >
-                <span class="text-gray-500 text-sm">UI DEVELOPER</span>
+                <span class="text-gray-500 text-sm">Hamburguesero</span>
               </span>
             </a>
           </div>
@@ -53,10 +56,13 @@
               ></path>
             </svg>
             <p class="leading-relaxed mb-6">
-              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
-              neutra before they sold out fixie 90's microdosing. Tacos
-              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
-              authentic iceland.
+              CookApp ha sido una gran ayuda para mi pequeña empresa. Desde que
+              comencé a utilizar la aplicación, he notado una gran mejora en mi
+              eficiencia y organización. Con CookApp, puedo llevar un
+              seguimiento de mis ventas y pedidos, y también puedo ver informes
+              detallados sobre mis ingresos. Además, la aplicación me permite
+              controlar mi inventario, lo que me ayuda a reducir el desperdicio
+              de alimentos y controlar mis costos.
             </p>
             <a class="inline-flex items-center">
               <img
@@ -66,9 +72,9 @@
               />
               <span class="flex-grow flex flex-col pl-4">
                 <span class="title-font font-medium text-gray-900"
-                  >Alper Kamu</span
+                  >Maria Rosas</span
                 >
-                <span class="text-gray-500 text-sm">DESIGNER</span>
+                <span class="text-gray-500 text-sm">Salchipapera</span>
               </span>
             </a>
           </div>
