@@ -85,7 +85,7 @@
         <img
           class="object-cover object-center rounded max-sm:hidden"
           alt="hero"
-          src="../../fiber-pricing.webp"
+          src="/fiber-pricing.webp"
         />
       </div>
     </div>
