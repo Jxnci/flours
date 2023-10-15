@@ -1,8 +1,6 @@
 <template>
   <section class="text-gray-600 body-font bg-violet-100">
-    <div
-      class="container mx-auto flex px-12 md:flex-row flex-col items-center"
-    >
+    <div class="container mx-auto flex px-12 md:flex-row flex-col items-center">
       <div
         class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
       >
@@ -20,7 +18,7 @@
           Nuestro sistema web te ofrece una plataforma intuitiva y fácil de
           usar, diseñada especialmente para emprendedores como tú.
         </p>
-        <div class="flex lg:flex-row max-md:flex-col gap-4">
+        <div class="flex lg:flex-row max-md:flex-col gap-4"> 
           <button
             class="bg-sky-500 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-blue-400 focus:outline-none"
           >
@@ -36,7 +34,7 @@
               />
             </svg>
             <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-white mb-1">Descubrelo en</span>
+              <span class="text-xs text-white mb-1">Desde la</span>
               <span class="title-font text-white font-medium">Web App</span>
             </span>
           </button>
@@ -54,7 +52,7 @@
               ></path>
             </svg>
             <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Proximamente en</span>
+              <span class="text-xs text-gray-600 mb-1">Pronto en</span>
               <span class="title-font font-medium">Google Play</span>
             </span>
           </button>
@@ -75,7 +73,7 @@
               ></path>
             </svg>
             <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Proximamente en</span>
+              <span class="text-xs text-gray-600 mb-1">Pronto en</span>
               <span class="title-font font-medium">App Store</span>
             </span>
           </button>
@@ -93,8 +91,7 @@
 </template>
 
 <style scoped>
-  img{
-    z-index: 5;
-  }
-
+img {
+  z-index: 5;
+}
 </style>

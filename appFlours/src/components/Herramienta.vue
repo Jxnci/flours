@@ -18,7 +18,7 @@
           <img
             alt="feature"
             class="object-cover object-center w-full"
-            src="../../public/dashboard.avif"
+            src="/dashboard.avif"
           />
         </div>
         <div
@@ -28,7 +28,7 @@
             <div
               class=" p-5 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-800 mb-5"
             >
-              <img src="/public/protection.png" alt="" class="w-20" srcset="" />
+              <img src="/protection.png" alt="" class="w-20" srcset="" />
             </div>
             <div class="flex-grow">
               <h2
@@ -42,7 +42,7 @@
             <div
               class=" p-5 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-500 mb-5"
             >
-              <img src="/public/cloud.png" alt="" class="w-20" srcset="" />
+              <img src="/cloud.png" alt="" class="w-20" srcset="" />
             </div>
             <div class="flex-grow">
               <h2
@@ -56,7 +56,7 @@
             <div
               class=" p-5 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-500 mb-5"
             >
-              <img src="/public/report.png" alt="" class="w-20" srcset="" />
+              <img src="/report.png" alt="" class="w-20" srcset="" />
             </div>
             <div class="flex-grow">
               <h2
@@ -70,7 +70,7 @@
             <div
               class=" p-5 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-500 mb-5"
             >
-              <img src="/public/happiness.png" alt="" class="w-20" srcset="" />
+              <img src="/happiness.png" alt="" class="w-20" srcset="" />
             </div>
             <div class="flex-grow">
               <h2
@@ -83,7 +83,7 @@
         </div>
       </div>
     </section>
-    <ul class="circles">
+    <!-- <ul class="circles z-20">
       <li></li>
       <li></li>
       <li></li>
@@ -94,7 +94,7 @@
       <li></li>
       <li></li>
       <li></li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
