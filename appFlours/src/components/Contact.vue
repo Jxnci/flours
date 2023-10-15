@@ -9,9 +9,11 @@
         marginwidth="0"
         title="map"
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3308.717938417535!2d-77.52627813819433!3d-9.530356810680948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1697327985947!5m2!1ses-419!2spe"
         style="filter: grayscale(0.5) contrast(1.2) opacity(0.6)"
       ></iframe>
+
+
     </div>
     <div class="container px-5 py-24 mx-auto flex">
       <div
@@ -50,7 +52,8 @@
           Enviar
         </button>
         <p class="text-xs text-gray-500 mt-3">
-          Tambien sugiere un combio o puedes visitar el soporte tecnico dentro de la aplicacion.
+          Tambien sugiere un cambio o puedes visitar el soporte tecnico dentro
+          de la aplicacion.
         </p>
       </div>
     </div>

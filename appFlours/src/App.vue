@@ -1,34 +1,47 @@
 <template>
-  <div class="font-sans">
-    <HeaderApp />
-    <Hero />
-    <Divider1 />
 
-    <!-- <HelloWorld /> -->
-    <!-- <Divider /> -->
-    <Testimonial />
-    <!-- <Divider /> -->
-    <Pricing />
-    <Concact />
-    <FooterApp />
-  </div>
+  <router-view />
+
 </template>
 
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import HeaderApp from "./components/HeaderApp.vue";
-import Hero from "./components/Hero.vue";
-import Concact from "./components/Contact.vue";
-import Testimonial from "./components/Testimonial.vue";
-import FooterApp from "./components/FooterApp.vue";
-import Pricing from "./components/pricing.vue";
-import Herramienta from "./components/Herramienta.vue";
-import Divider from "./components/divider.vue";
-import Divider1 from "./components/divider1.vue";
+import { RouterView } from "vue-router";
+
 </script>
 
-<style>
+<style scoped>
 html {
   scroll-behavior: smooth;
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+nav a.router-link-exact-active {
+  color: red;
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid yellow;
+}
+
+nav a:first-of-type {
+  border: 0;
 }
 </style>
