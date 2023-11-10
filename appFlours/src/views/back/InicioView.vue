@@ -11,12 +11,12 @@
       </h2>
       <div class="lg:mt-0 lg:flex-shrink-0">
         <div class="inline-flex rounded-md shadow">
-          <router-link
-            :to="{ name: 'productosCreate' }"
+          <button
+            @click.prevent="verificarProductos"
             class="py-4 px-6 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
           >
             Crea un producto
-          </router-link>
+          </button>
         </div>
         <div class="inline-flex ml-3 rounded-md shadow">
           <button
@@ -38,5 +38,9 @@
 </template>
 <script setup>
 import Data from "../../components/componentsBack/Data.vue";
-import { RouterLink } from "vue-router";
+import router from "../../router";
+
+const verificarProductos = () => {
+  router.push({ name: "productos" });
+};
 </script>

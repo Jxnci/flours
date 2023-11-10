@@ -1,13 +1,30 @@
 <template>
   <div class="p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-800 mx-4">
     <div class="flex flex-row gap-4 items-center">
-      <img src="/1.jpg" class="rounded-lg w-16 h-16" />
       <div class="flex flex-row justify-between w-full">
-        <div>
-          <p class="text-xl font-medium text-gray-800 dark:text-white">
-            ${product}
-          </p>
-          <p class="text-xs text-gray-400">${category}</p>
+        <div v-if="producto" class="flex gap-4">
+          <img src="/1.jpg" class="rounded-lg w-16 h-16" />
+          <div class="flex flex-col">
+            <p class="text-xl font-medium text-gray-800 dark:text-white">
+              {{ producto[0].name }}
+            </p>
+            <p class="text-xs text-gray-400">Cat:{{ producto[0].category_id }}</p>
+            <p class="text-xs text-gray-400">stock:{{ producto[0].stock }}</p>
+          </div>
+        </div>
+        <div v-else>
+          <div class=" mx-auto rounded-md w-60">
+            <div
+              class="flex flex-row items-center justify-center h-full space-x-4 animate-pulse"
+            >
+              <div class="w-16 h-16 bg-gray-300 rounded-md"></div>
+              <div class="flex flex-col space-y-2">
+                <div class="h-4 bg-gray-300 rounded-md w-36"></div>
+                <div class="w-24 h-4 bg-gray-300 rounded-md"></div>
+                <div class="w-24 h-4 bg-gray-300 rounded-md"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="p-2 bg-blue-100 rounded-lg dark:bg-white">
           <div
@@ -37,7 +54,7 @@
     </div>
   </div>
 
-  <div class=" mx-4">
+  <div class="mx-4">
     <div class="py-8">
       <div class="flex flex-row justify-between w-full mb-1 sm:mb-0">
         <h2 class="text-2xl leading-tight">Insumos</h2>
@@ -61,8 +78,10 @@
           </form>
         </div>
       </div>
-      <div class="  py-4 overflow-x-auto w-full">
-        <div class="inline-block min-w-full overflow-hidden rounded-lg shadow border">
+      <div class="py-4 overflow-x-auto w-full">
+        <div
+          class="inline-block min-w-full overflow-hidden rounded-lg shadow border"
+        >
           <table class="min-w-full leading-normal">
             <thead>
               <tr>
@@ -283,4 +302,17 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+import ProductService from "../../../services/ProductService.js";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const id = route.params.id;
+
+const service = new ProductService();
+const producto = ref(null);
+onMounted(async () => {
+  producto.value = await service.fetchById(id);
+});
+</script>

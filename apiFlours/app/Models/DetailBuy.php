@@ -11,6 +11,7 @@ class DetailBuy extends Model {
     protected $fillable = [
         'suplies_id',
         'buy_id',
+        'user_id',
         'amount',
         'subtotal',
     ];

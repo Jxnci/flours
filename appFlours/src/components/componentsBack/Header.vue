@@ -1,6 +1,6 @@
 <template>
   <header
-    class="z-40 items-center w-auto border h-16 bg-white shadow-md dark:bg-gray-700 rounded-2xl "
+    class="z-40 items-center w-auto border h-16 bg-white shadow-md dark:bg-gray-700 rounded-2xl"
   >
     <div
       class="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center"
@@ -41,7 +41,7 @@
             <input
               type="text"
               class="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-500"
-              placeholder="Producto ..."
+              placeholder="Filtrar Producto ..."
             />
             <div
               class="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block"
@@ -94,7 +94,7 @@
                 aria-labelledby="options-menu"
               >
                 <div
-                  class="block px-4 py-2 text-md bg-gray-100 m-2 rounded-md text-gray-700  hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
+                  class="block px-4 py-2 text-md bg-gray-100 m-2 rounded-md text-gray-700 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
                   role="menuitem"
                 >
                   <span class="flex flex-col">
@@ -117,7 +117,7 @@
                   role="menuitem"
                 >
                   <span class="flex flex-col">
-                    <span> Cerrar Sesion </span>
+                    <button @click.prevent="logout">Cerrar Sesion</button>
                   </span>
                 </router-link>
               </div>
@@ -131,10 +131,19 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
+import router from "../../router";
 
 let isMenuOpen = ref(false);
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
+
+import useAuth from "../../store/useAuth";
+const store = useAuth();
+
+const logout = () => {
+  store.logout();
+  router.push({ name: "login" });
+};
 </script>

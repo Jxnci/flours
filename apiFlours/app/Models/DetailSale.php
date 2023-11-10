@@ -11,6 +11,7 @@ class DetailSale extends Model {
     protected $fillable = [
         'product_id',
         'sale_id',
+        'user_id',
         'amount',
         'subtotal',
     ];
@@ -20,5 +21,8 @@ class DetailSale extends Model {
     }
     public function sale() {
         return $this->belongsTo(Sale::class);
+    }
+    public function user() {
+      return $this->belongsTo(User::class);
     }
 }
