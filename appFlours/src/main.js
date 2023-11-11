@@ -7,8 +7,9 @@ import { createPinia } from "pinia";
 import piniaPluginPersistedState from "pinia-plugin-persistedstate";
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { RiLoader2Line } from "oh-vue-icons/icons";
-addIcons(RiLoader2Line);
+import { HiSolidMenu } from "oh-vue-icons/icons";
+
+addIcons(HiSolidMenu);
 
 const pinia = createPinia();
 const app = createApp(App);

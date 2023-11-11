@@ -8,17 +8,18 @@ const useAuth = defineStore("Auth", {
     };
   },
   actions: {
-    async register(name, email, password) {
-      const uri = `${this.baseURL}/auth/register`;
+    async register(name,lastname, email, password) {
+      const uri = `${this.baseURL}/register`;
       const rawResponse = await fetch(uri, {
         method: "POST",
         headers: {
           "Content-Type": "Application/json",
-          Accept: "Application/json",
+          "Accept": "Application/json",
         },
         body: JSON.stringify({
           name: name,
           email: email,
+          lastname: lastname,
           password: password,
         }),
       });

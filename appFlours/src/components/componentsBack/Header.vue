@@ -5,10 +5,8 @@
     <div
       class="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center"
     >
-      <div
-        class="relative flex items-center w-full pl-1 lg:max-w-68 sm:pr-2 sm:ml-0"
-      >
-        <div class="container relative left-0 z-50 flex w-3/4 h-auto">
+      <div class="flex items-center justify-between w-full pl-1">
+        <div class="z-50 flex w-full h-auto">
           <div
             class="relative flex items-center w-full h-full lg:w-64 group border rounded-full"
           >
@@ -50,36 +48,62 @@
             </div>
           </div>
         </div>
-        <div
-          class="relative flex items-center justify-end w-1/4 p-1 ml-5 mr-4 sm:mr-0 sm:right-auto gap-6"
-        >
+        <div class="md:hidden flex justify-end ms-2">
+          <button
+            @click="toggleResponsive"
+            class="border rounded-lg bg-gray-50 px-2 py-1"
+          >
+            <v-icon name="hi-solid-menu" class="text-gray-600" />
+          </button>
+          <div
+            class="absolute right-0 top-12 w-56 mt-2 origin-top-right flex flex-col p-4 gap-2 bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5"
+            :class="{ hidden: !responsive }"
+          >
+            <router-link
+              :to="{ name: 'inicio' }"
+              class="text-gray-500 hover:text-gray-700"
+              >Inicio</router-link
+            >
+            <router-link
+              :to="{ name: 'productos' }"
+              class="text-gray-500 hover:text-gray-700"
+              >Productos</router-link
+            >
+            <router-link
+              :to="{ name: 'predicciones' }"
+              class="text-gray-500 hover:text-gray-700"
+              >Predicciones</router-link
+            >
+          </div>
+        </div>
+        <div class="flex items-center p-1 ms-2 gap-6">
           <router-link
             :to="{ name: 'inicio' }"
-            class="text-gray-500 hover:text-gray-700"
+            class="text-gray-500 hover:text-gray-700 max-md:hidden max-md:w-0"
             >Inicio</router-link
           >
           <router-link
             :to="{ name: 'productos' }"
-            class="text-gray-500 hover:text-gray-700"
+            class="text-gray-500 hover:text-gray-700 max-md:hidden max-md:w-0"
             >Productos</router-link
           >
           <router-link
             :to="{ name: 'predicciones' }"
-            class="text-gray-500 hover:text-gray-700"
+            class="text-gray-500 hover:text-gray-700 max-md:hidden max-md:w-0"
             >Predicciones</router-link
           >
 
-          <div class="relative inline-block text-left">
-            <div>
+          <div class="text-left w-12">
+            <div class="">
               <button
                 type="button"
-                class="flex items-center justify-center w-full rounded-full text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
+                class="flex items-center justify-center rounded-full text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
                 @click="toggleMenu"
               >
                 <img
                   alt="profil"
                   src="/1.jpg"
-                  class="mx-auto object-cover rounded-full h-10 w-10"
+                  class="object-cover rounded-full h-10 w-10"
                 />
               </button>
             </div>
@@ -134,9 +158,13 @@ import { ref } from "vue";
 import router from "../../router";
 
 let isMenuOpen = ref(false);
+let responsive = ref(false);
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
+}
+function toggleResponsive() {
+  responsive.value = !responsive.value;
 }
 
 import useAuth from "../../store/useAuth";

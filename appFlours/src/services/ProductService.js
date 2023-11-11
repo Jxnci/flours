@@ -12,8 +12,8 @@ class ProductService {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",
-          Accept: "Application/json",
-          Authorization: `Bearer ${TOKEN}`,
+          "Accept": "Application/json",
+          "Authorization": `Bearer ${TOKEN}`,
         },
       });
       const response = await rawResponse.json();
@@ -34,8 +34,8 @@ class ProductService {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",
-          Accept: "Application/json",
-          Authorization: `Bearer ${TOKEN}`,
+          "Accept": "Application/json",
+          "Authorization": `Bearer ${TOKEN}`,
         },
       });
       const { data } = await rawResponse.json();
@@ -44,5 +44,29 @@ class ProductService {
       console.log(error);
     }
   }
+
+  async add() {
+    try {
+      const store = useAuth();
+      const TOKEN = store.token;
+      const URL_API = store.baseURL;
+
+      const uri = `${URL_API}/productos/${id}`;
+      const rawResponse = await fetch(uri, {
+        method: "GET",
+        headers: {
+          "Content-Type": "Application/json",
+          "Accept": "Application/json",
+          "Authorization": `Bearer ${TOKEN}`,
+        },
+      });
+      const { data } = await rawResponse.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  
 }
 export default ProductService;

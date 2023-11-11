@@ -10,7 +10,12 @@ class Product extends Model {
 
   protected $fillable = [
     'name',
-    'stock',
+    'stock', #cantidad
+    'price_buy', #precio de compra
+    'price_sale', #precio de venta(0.00)
+    'imagen', #ruta img
+    'state', #estado 0/1
+    'rate', #porcentaje de posible ganacia %
     'category_id',
     'user_id',
   ];

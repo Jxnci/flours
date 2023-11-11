@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller {
   /**
@@ -19,12 +20,26 @@ class CategoryController extends Controller {
    * Store a newly created resource in storage.
    */
   public function store(Request $request) {
-    $inputs = $request->input();
-    $data = Category::create($inputs);
-    return response()->json([
-      'data' => $data,
-      'mensaje' => "Categoria agregada!"
+    $inputs = $request->all();
+    $inputs['user_id'] = Auth::user()->id;
+
+    $validator = Validator::make($inputs, [
+      'name' => 'required',
+    ], [
+      'required' => 'El nombre es requerido',
     ]);
+    if ($validator->fails()) {
+      return response()->json([
+        'error' => true,
+        'mensaje' => "El nombre es requerido"
+      ]);
+    } else {
+      $data = Category::create($inputs);
+      return response()->json([
+        'data' => $data,
+        'mensaje' => "Categoria agregada!"
+      ]);
+    }
   }
 
   /**
@@ -45,6 +60,25 @@ class CategoryController extends Controller {
    * Remove the specified resource from storage.
    */
   public function destroy(string $id) {
-    //
+    $e = Category::find($id);
+    if (isset($e)) {
+      $res = Category::destroy($id);
+      if ($res) {
+        return response()->json([
+          'data' => $e,
+          'mensaje' => "Categoria eliminada"
+        ]);
+      } else {
+        return response()->json([
+          'error' => true,
+          'mensaje' => "Categoria no eliminada"
+        ]);
+      }
+    } else {
+      return response()->json([
+        'error' => true,
+        'mensaje' => "Categoria no encontrado"
+      ]);
+    }
   }
 }
