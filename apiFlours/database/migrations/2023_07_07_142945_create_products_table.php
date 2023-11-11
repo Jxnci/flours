@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('stock');
+            $table->float('price_buy');
+            $table->float('price_sale');
+            $table->string('imagen');
+            $table->integer('state');
+            $table->integer('rate');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

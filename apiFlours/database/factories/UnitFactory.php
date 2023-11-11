@@ -8,15 +8,16 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Unit>
  */
 class UnitFactory extends Factory {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array {
-        return [
-            'name' => fake()->randomElement(['Kg', 'Gr', 'Lts', 'Unid', 'Doce']),
-            'worth' => fake()->randomElement(['1.0', '0.1', '1.0', '1.0', '12.0']),
-        ];
-    }
+  /**
+   * Define the model's default state.
+   *
+   * @return array<string, mixed>
+   */
+  public function definition(): array {
+    return [
+      'name' => fake()->randomElement(['Kg', 'Gr', 'Lts', 'Unid', 'Doce']),
+      'worth' => fake()->randomElement(['1.0', '0.1', '1.0', '1.0', '12.0']),
+      'user_id' => $this->faker->numberBetween(1, 10)
+    ];
+  }
 }

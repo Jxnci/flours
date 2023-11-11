@@ -11,7 +11,7 @@ class DetailRecipe extends Model {
     protected $fillable = [
         'product_id',
         'suplies_id',
-        'type_id',
+        'user_id',
         'amount',
     ];
 
@@ -21,7 +21,7 @@ class DetailRecipe extends Model {
     public function suplies() {
         return $this->belongsTo(Suplies::class);
     }
-    public function type() {
-        return $this->belongsTo(Type::class);
+    public function user() {
+      return $this->belongsTo(User::class);
     }
 }

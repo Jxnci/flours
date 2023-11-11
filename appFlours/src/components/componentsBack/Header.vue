@@ -1,14 +1,12 @@
 <template>
   <header
-    class="z-40 items-center w-auto border h-16 bg-white shadow-md dark:bg-gray-700 rounded-2xl "
+    class="z-40 items-center w-auto border h-16 bg-white shadow-md dark:bg-gray-700 rounded-2xl"
   >
     <div
       class="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center"
     >
-      <div
-        class="relative flex items-center w-full pl-1 lg:max-w-68 sm:pr-2 sm:ml-0"
-      >
-        <div class="container relative left-0 z-50 flex w-3/4 h-auto">
+      <div class="flex items-center justify-between w-full pl-1">
+        <div class="z-50 flex w-full h-auto">
           <div
             class="relative flex items-center w-full h-full lg:w-64 group border rounded-full"
           >
@@ -41,7 +39,7 @@
             <input
               type="text"
               class="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-500"
-              placeholder="Producto ..."
+              placeholder="Filtrar Producto ..."
             />
             <div
               class="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block"
@@ -50,36 +48,62 @@
             </div>
           </div>
         </div>
-        <div
-          class="relative flex items-center justify-end w-1/4 p-1 ml-5 mr-4 sm:mr-0 sm:right-auto gap-6"
-        >
+        <div class="md:hidden flex justify-end ms-2">
+          <button
+            @click="toggleResponsive"
+            class="border rounded-lg bg-gray-50 px-2 py-1"
+          >
+            <v-icon name="hi-solid-menu" class="text-gray-600" />
+          </button>
+          <div
+            class="absolute right-0 top-12 w-56 mt-2 origin-top-right flex flex-col p-4 gap-2 bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5"
+            :class="{ hidden: !responsive }"
+          >
+            <router-link
+              :to="{ name: 'inicio' }"
+              class="text-gray-500 hover:text-gray-700"
+              >Inicio</router-link
+            >
+            <router-link
+              :to="{ name: 'productos' }"
+              class="text-gray-500 hover:text-gray-700"
+              >Productos</router-link
+            >
+            <router-link
+              :to="{ name: 'predicciones' }"
+              class="text-gray-500 hover:text-gray-700"
+              >Predicciones</router-link
+            >
+          </div>
+        </div>
+        <div class="flex items-center p-1 ms-2 gap-6">
           <router-link
             :to="{ name: 'inicio' }"
-            class="text-gray-500 hover:text-gray-700"
+            class="text-gray-500 hover:text-gray-700 max-md:hidden max-md:w-0"
             >Inicio</router-link
           >
           <router-link
             :to="{ name: 'productos' }"
-            class="text-gray-500 hover:text-gray-700"
+            class="text-gray-500 hover:text-gray-700 max-md:hidden max-md:w-0"
             >Productos</router-link
           >
           <router-link
             :to="{ name: 'predicciones' }"
-            class="text-gray-500 hover:text-gray-700"
+            class="text-gray-500 hover:text-gray-700 max-md:hidden max-md:w-0"
             >Predicciones</router-link
           >
 
-          <div class="relative inline-block text-left">
-            <div>
+          <div class="text-left w-12">
+            <div class="">
               <button
                 type="button"
-                class="flex items-center justify-center w-full rounded-full text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
+                class="flex items-center justify-center rounded-full text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
                 @click="toggleMenu"
               >
                 <img
                   alt="profil"
                   src="/1.jpg"
-                  class="mx-auto object-cover rounded-full h-10 w-10"
+                  class="object-cover rounded-full h-10 w-10"
                 />
               </button>
             </div>
@@ -94,7 +118,7 @@
                 aria-labelledby="options-menu"
               >
                 <div
-                  class="block px-4 py-2 text-md bg-gray-100 m-2 rounded-md text-gray-700  hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
+                  class="block px-4 py-2 text-md bg-gray-100 m-2 rounded-md text-gray-700 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
                   role="menuitem"
                 >
                   <span class="flex flex-col">
@@ -117,7 +141,7 @@
                   role="menuitem"
                 >
                   <span class="flex flex-col">
-                    <span> Cerrar Sesion </span>
+                    <button @click.prevent="logout">Cerrar Sesion</button>
                   </span>
                 </router-link>
               </div>
@@ -131,10 +155,23 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
+import router from "../../router";
 
 let isMenuOpen = ref(false);
+let responsive = ref(false);
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
+function toggleResponsive() {
+  responsive.value = !responsive.value;
+}
+
+import useAuth from "../../store/useAuth";
+const store = useAuth();
+
+const logout = () => {
+  store.logout();
+  router.push({ name: "login" });
+};
 </script>

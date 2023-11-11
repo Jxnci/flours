@@ -17,8 +17,8 @@ class DetailRecipeFactory extends Factory {
         return [
             'product_id' => $this->faker->numberBetween(1, 30),
             'suplies_id' => $this->faker->numberBetween(1, 30),
-            'type_id' => $this->faker->numberBetween(1, 5),
-            'amount' => $this->faker->numberBetween(1, 20),
+            'user_id' => $this->faker->numberBetween(1, 10),
+            'amount' => $this->faker->numberBetween(1, 20)
         ];
     }
 }

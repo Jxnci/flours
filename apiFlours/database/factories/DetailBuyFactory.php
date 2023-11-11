@@ -17,6 +17,7 @@ class DetailBuyFactory extends Factory {
         return [
             'suplies_id' => $this->faker->numberBetween(1, 30),
             'buy_id' => $this->faker->numberBetween(1, 15),
+            'user_id' => $this->faker->numberBetween(1, 10),
             'amount' => $this->faker->numberBetween(1, 10),
             'subtotal' => $this->faker->randomFloat(1, 1, 20),
         ];

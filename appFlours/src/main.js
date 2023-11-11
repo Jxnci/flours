@@ -3,6 +3,15 @@ import router from "./router";
 import "./style.css";
 import App from "./App.vue";
 
+import { createPinia } from "pinia";
+import piniaPluginPersistedState from "pinia-plugin-persistedstate";
+
+import { OhVueIcon, addIcons } from "oh-vue-icons";
+import { HiSolidMenu } from "oh-vue-icons/icons";
+
+addIcons(HiSolidMenu);
+
+const pinia = createPinia();
 const app = createApp(App);
 
 // app.directive("font-size", {
@@ -56,4 +65,9 @@ const app = createApp(App);
 //   },
 // });
 
-app.use(router).mount("#app");
+pinia.use(piniaPluginPersistedState);
+
+app.component("v-icon", OhVueIcon);
+app.use(router);
+app.use(pinia).mount("#app");
+
