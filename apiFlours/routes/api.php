@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 Route::post("register", [AuthController::class, 'register']);
 Route::post("login", [AuthController::class, 'login']);
 
+Route::get('/testAPI', function () {
+  return 'Este es mi mensaje de ejemplo';
+});
 
 Route::middleware(['auth:sanctum'])->group(function () {
   Route::apiResource("usuarios", UserController::class);
